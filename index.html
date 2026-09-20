@@ -4,8 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>你好同学</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23C8472F'/%3E%3Ctext x='32' y='44' font-size='34' font-family='serif' fill='%23F5EFE3' text-anchor='middle'%3E词%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
+<!-- <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23C8472F'/%3E%3Ctext x='32' y='44' font-size='34' font-family='serif' fill='%23F5EFE3' text-anchor='middle'%3E词%3C/text%3E%3C/svg%3E"> -->
+<!-- <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --bg:#171D22;
@@ -66,7 +70,7 @@
   .face .corner{position:absolute;top:14px;right:16px;font-size:11px;color:var(--dim);}
   .face .hint{position:absolute;bottom:14px;font-size:11px;color:var(--dim);}
   .front .hanzi{
-    font-family:"Noto Serif SC",serif;font-weight:900;
+    font-family: "Noto Serif SC", SimSun, "NSimSun", serif;
     font-size:clamp(64px,15vw,128px);line-height:1.15;color:var(--text);
     text-align:center;padding:0 20px;word-break:break-all;
   }
@@ -89,12 +93,17 @@
   .controls button.primary:hover{background:var(--cinnabar-soft);border-color:var(--cinnabar-soft);}
   .controls button:disabled{opacity:.35;cursor:not-allowed;}
 
-  .keys{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:18px;font-size:12px;color:var(--dim);}
+  .keys{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:18px;font-size:12px;color:var(--dim); }
   .keys kbd{
     font-family:inherit;font-size:11px;border:1px solid var(--line);border-bottom-width:2px;
     border-radius:5px;padding:2px 7px;background:var(--panel);color:var(--text);
   }
-
+  .credit kbd{
+    font-family:inherit;font-size:11px;border:1px solid var(--line);border-bottom-width:2px;
+    border-radius:5px;padding:2px 7px;background:var(--panel);color:var(--text);
+    margin-left: 3px;
+  }
+ .credit{display:flex;flex-wrap:wrap;justify-content:center;margin-top:18px;font-size:12px;color:var(--dim); }
   /* ===== list view ===== */
   .list-view{display:none;width:100%;max-width:680px;margin-top:10px;}
   body.show-list .list-view{display:block;}
@@ -129,6 +138,7 @@
   @media (prefers-reduced-motion:reduce){
     .card-inner{transition:none;}
   }
+ 
 </style>
 </head>
 <body>
@@ -202,9 +212,8 @@
   <span><kbd>S</kbd> shuffle</span>
   <span><kbd>L</kbd> list view</span>
 </div>
-
+<p class="credit">This application was Developed by<a style="text-decoration: none;color: inherit;" href="https://github.com/DecentCoders/"><kbd>DecentCoders</kbd></a></p>
 <script>
-/* HSK 4 word list — first 100 entries from MandarinBean.com */
 const WORDS = [
 [1,"爱情","àiqíng","Love"],
 [2,"安排","ānpái","arrange"],
