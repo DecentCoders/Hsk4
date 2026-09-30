@@ -225,7 +225,7 @@ const WORDS = [
 [7,"棒","bàng","Great；excellent"],
 [8,"包子","bāozi","Steamed stuffed bun"],
 [9,"保护","bǎohù","protect"],
-[10,"保证","bǎozhèng","ensure"],
+[10,"保证","bǎozhèng","ensure，garantee"],
 [11,"抱","bào","Hold"],
 [12,"抱歉","bàoqiàn","feel sorry"],
 [13,"报名","bàomíng","sign up"],
@@ -525,7 +525,7 @@ const WORDS = [
 [307,"秒","miǎo","second"],
 [308,"民族","mínzú","Nation"],
 [309,"母亲","mǔqīn","mother"],
-[310,"目的","mùdì","objective"],
+[310,"目的","mùdì","perpose"],
 [311,"耐心","nàixīn","patience"],
 [312,"难道","nándào","could it be said that"],
 [313,"难受","nánshòu","Uncomfortable"],
@@ -726,7 +726,7 @@ const WORDS = [
 [508,"也许","yěxǔ","perhaps"],
 [509,"页","yè","page"],
 [510,"叶子","yèzi","Leaf"],
-[511,"一切","yíqiè","everything"],
+[511,"一切","yíqiè","All，everything"],
 [512,"以","yǐ","with"],
 [513,"以为","yǐwéi","Think"],
 [514,"意见","yìjiàn","Opinion"],
@@ -1421,7 +1421,6 @@ const WORDS = [
 const total = WORDS.length;
 let order = [], cur = 0, flipped = false, showList = false;
 
-/* Fisher-Yates shuffle */
 function shuffle(){
   order = WORDS.map(function(_,i){return i;});
   for(let i = order.length - 1; i > 0; i--){
@@ -1466,7 +1465,6 @@ function flip(){ flipped = !flipped; render(); }
 function next(){ if(cur < total - 1){ cur++; flipped = false; render(); } }
 function prev(){ if(cur > 0){ cur--; flipped = false; render(); } }
 
-/* events */
 document.getElementById('card3d').addEventListener('click', flip);
 document.getElementById('flipBtn').addEventListener('click', flip);
 document.getElementById('nextBtn').addEventListener('click', next);
@@ -1484,7 +1482,6 @@ document.addEventListener('keydown', function(e){
   else if(e.key === 'l' || e.key === 'L'){ toggleList(); }
 });
 
-/* start shuffled */
 shuffle();
 render();
 </script>
